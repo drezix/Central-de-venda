@@ -1,0 +1,16 @@
+Estrutura do projeto
+
+src/main/java/backend/saleproject
+    ├── controllers
+    │   ├── SaleController.java
+    │   └── SellerController.java
+    ├── models
+    │   ├── Sale.java
+    │   └── Seller.java
+    ├── repository
+    │   ├── SaleRepository.java
+    │   └── SellerRepository.java
+    ├── services
+    │   ├── SaleService.java
+    │   └── SellerService.java
+    └── SaleprojectApplication.java
