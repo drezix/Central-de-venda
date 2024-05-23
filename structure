@@ -13,4 +13,4 @@ src/main/java/backend/saleproject
     ├── services
     │   ├── SaleService.java
     │   └── SellerService.java
-    └── SaleprojectApplication.java
+    └── SaleProjectApplication.java
