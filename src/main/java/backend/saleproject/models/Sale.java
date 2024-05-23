@@ -1,9 +1,6 @@
 package backend.saleproject.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Sale {
@@ -11,17 +8,12 @@ public class Sale {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "data venda")
     private String saleDate;
-
-    @Column(name = "valor")
     private double amount;
 
-    @Column(name = "vendedor id")
-    private Long sellerId;
-
-    @Column(name = "vendedor nome")
-    private String sellerName;
+    @ManyToOne
+    @JoinColumn(name = "seller_id")
+    private Seller seller;
 
     public Long getId() {
         return id;
@@ -47,19 +39,11 @@ public class Sale {
         this.amount = amount;
     }
 
-    public Long getSellerId() {
-        return sellerId;
+    public Seller getSeller() {
+        return seller;
     }
 
-    public void setSellerId(Long sellerId) {
-        this.sellerId = sellerId;
-    }
-
-    public String getSellerName() {
-        return sellerName;
-    }
-
-    public void setSellerName(String sellerName) {
-        this.sellerName = sellerName;
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 }

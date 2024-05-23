@@ -1,9 +1,7 @@
 package backend.saleproject.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Seller {
@@ -12,14 +10,10 @@ public class Seller {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "vendedor nome")
     private String name;
 
-    @Column(name = "total de vendas")
-    private Long totalSales;
-
-    @Column(name = "media de vendas")
-    private Long salesMedia;
+    @OneToMany(mappedBy = "vendedor")
+    private List<Sale> sales;
 
     public Long getId() {
         return id;
@@ -35,22 +29,6 @@ public class Seller {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getTotalSales() {
-        return totalSales;
-    }
-
-    public void setTotalSales(Long totalSales) {
-        this.totalSales = totalSales;
-    }
-
-    public Long getSalesMedia() {
-        return salesMedia;
-    }
-
-    public void setSalesMedia(Long salesMedia) {
-        this.salesMedia = salesMedia;
     }
 
 }
