@@ -2,6 +2,8 @@ package backend.saleproject.models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 public class Sale {
     @Id
@@ -14,6 +16,12 @@ public class Sale {
     @ManyToOne
     @JoinColumn(name = "seller_id")
     private Seller seller;
+
+    public Sale(String saleDate, Double amount, Seller seller) {
+        this.saleDate = saleDate;
+        this.amount = amount;
+        this.seller = seller;
+    }
 
     public Long getId() {
         return id;
