@@ -2,7 +2,6 @@ package backend.saleproject.models;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 
 @Entity
 public class Sale {

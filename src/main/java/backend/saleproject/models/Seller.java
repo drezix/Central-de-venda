@@ -5,16 +5,16 @@ import java.util.List;
 
 @Entity
 public class Seller {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "vendedor")
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Sale> sales;
 
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -31,4 +31,11 @@ public class Seller {
         this.name = name;
     }
 
+    public List<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(List<Sale> sales) {
+        this.sales = sales;
+    }
 }
